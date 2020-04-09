@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre Consola</em></p>
+
+    <script>
+        //call
+        function saludar() {
+            console.log('hola soy ' + this.name + ' ' + this.apellido);
+            
+        }
+        const robert = {
+            name: 'robert',
+            apellido: 'ruiz',
+        }
+
+        saludar.call(robert)
+
+        function caminar(metros,direccion) {
+            console.log(this.name + ' camina '+ metros + 'hacia' + direccion);
+            
+        }
+
+        caminar.call(robert,400,'norte')
+
+        //apply
+        const valores = [800,'noreste']
+        caminar.apply(robert,valores)
+
+        //bind
+
+        const erick={
+            name: 'erick',
+            apellido: 'Darocha'
+        }
+
+        const ericksaluda = saludar.bind(erick)
+        ericksaluda()
+        
+        
+
+    </script>
+</body>
+</html>

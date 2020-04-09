@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre Consola</em></p>
+
+    <script>
+        //global scope
+        console.log(this);
+        // this en una funcion
+        whoIsThis = () => {
+            return this
+        }
+        console.log(whoIsThis());
+        // strict
+        //objetos
+        const person = {
+            name: 'robert',
+            saludar: function () {
+                console.log('hola soy '+ this.name)
+            } 
+            
+        }
+
+        person.saludar()
+
+        // clases 
+
+        class persona{
+            constructor(name){
+                this.name= name
+            }
+            saludar(){
+                console.log('hola soy '+ this.name)
+            }
+        }
+
+        const robert = new persona('robert')
+        robert.saludar()
+    </script>
+</body>
+</html>
